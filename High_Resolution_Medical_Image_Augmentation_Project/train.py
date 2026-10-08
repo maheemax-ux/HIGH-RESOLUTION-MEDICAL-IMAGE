@@ -1,23 +1,4 @@
-"""
-Medical Image Augmentation Project
------------------------------------
-Generic high-resolution image augmentation pipeline.
 
-Expected dataset:
-dataset/
-    train/
-        class_1/
-        class_2/
-    val/
-        class_1/
-        class_2/
-    test/
-        class_1/
-        class_2/
-
-For a binary medical classification task, replace class_1/class_2
-with meaningful labels such as normal/abnormal.
-"""
 
 import os
 import cv2
@@ -28,8 +9,6 @@ import albumentations as A
 IMAGE_SIZE = (512, 512)
 SEED = 42
 
-# Conservative medical-image augmentation.
-# Do NOT blindly use horizontal flips when anatomical laterality matters.
 train_transform = A.Compose([
     A.Rotate(limit=10, p=0.5),
     A.ShiftScaleRotate(
