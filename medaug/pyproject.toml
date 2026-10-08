@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medaug"
+version = "0.1.0"
+description = "Augmentation toolkit for high-resolution medical images (2D histology/fundus, 3D CT/MRI)"
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy", "pyyaml", "pillow"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+medaug = "medaug.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

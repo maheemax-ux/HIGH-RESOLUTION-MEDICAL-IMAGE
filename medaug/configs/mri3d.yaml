@@ -1,0 +1,9 @@
+# 3D MRI
+crop: {size: 64, margin: 12}
+transforms:
+  - {name: affine, rotate_deg: 10, scale: [0.9, 1.1], p: 0.3}
+  - {name: elastic, sigma: 6, alpha: 4, p: 0.2}
+  - {name: bias, strength: 0.3, p: 0.4}
+  - {name: gamma, p: 0.3}
+  - {name: lowres, zoom: [0.5, 1.0], p: 0.2}
+  - {name: rician, std: 0.02, p: 0.3}

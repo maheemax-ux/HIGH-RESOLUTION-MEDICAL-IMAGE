@@ -1,0 +1,10 @@
+# 2D H&E histology tiles (uint8 RGB)
+crop: {size: 256, margin: 32, min_fg_frac: 0.0}
+transforms:
+  - {name: flip, axes: [0, 1], p: 0.5}
+  - {name: rot90, axes: [0, 1], p: 0.5}
+  - {name: affine, rotate_deg: 15, scale: [0.9, 1.1], p: 0.3}
+  - {name: elastic, sigma: 12, alpha: 8, p: 0.2}
+  - {name: hed, sigma: 0.05, bias: 0.05, p: 0.8}
+  - {name: blur, sigma: [0.3, 1.5], p: 0.2}
+  - {name: noise, std: 0.02, p: 0.2}

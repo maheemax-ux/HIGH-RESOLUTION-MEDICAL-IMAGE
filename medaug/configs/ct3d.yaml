@@ -1,0 +1,10 @@
+# 3D CT segmentation
+crop: {size: 64, margin: 12, min_fg_frac: 0.001}
+transforms:
+  - {name: clip_scale, lo: -200, hi: 300}
+  - {name: affine, rotate_deg: 10, scale: [0.9, 1.1], p: 0.3}
+  - {name: elastic, sigma: 6, alpha: 4, p: 0.2}
+  - {name: flip, axes: [0, 1, 2], p: 0.5}
+  - {name: gamma, gamma: [0.7, 1.5], p: 0.3}
+  - {name: blur, sigma: [0.3, 1.0], p: 0.2}
+  - {name: noise, std: 0.01, p: 0.2}
