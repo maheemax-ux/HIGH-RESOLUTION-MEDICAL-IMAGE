@@ -1,14 +1,4 @@
-"""
-Optional baseline classifier for the augmented dataset.
 
-This example uses TensorFlow/Keras. It assumes:
-dataset/train/<class_name>/*.jpg
-dataset/val/<class_name>/*.jpg
-dataset/test/<class_name>/*.jpg
-
-For a serious medical project, keep the test set completely untouched.
-Augmentation should be applied to training images only.
-"""
 
 import tensorflow as tf
 from tensorflow.keras import layers, models
@@ -35,8 +25,7 @@ val_ds = tf.keras.utils.image_dataset_from_directory(
 
 num_classes = len(train_ds.class_names)
 
-# Keras-side augmentation for the baseline.
-# Keep this conservative and clinically justified.
+
 augmentation = tf.keras.Sequential([
     layers.RandomRotation(0.03),
     layers.RandomZoom(0.08),
