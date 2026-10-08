@@ -1,11 +1,3 @@
-"""
-Evaluation template.
-
-Important:
-- Use an untouched test set.
-- Report more than accuracy for medical classification.
-- Consider sensitivity (recall), specificity, precision, F1 and ROC-AUC.
-"""
 
 import numpy as np
 import tensorflow as tf
